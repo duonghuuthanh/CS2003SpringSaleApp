@@ -5,7 +5,12 @@
 package com.dht.hibernatedemo;
 
 import com.dht.pojo.Category;
+import com.dht.pojo.OrderDetail;
+import com.dht.pojo.ProdTag;
 import com.dht.pojo.Product;
+import com.dht.pojo.SaleOrder;
+import com.dht.pojo.Tag;
+import com.dht.pojo.User;
 import java.util.Properties;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -33,6 +38,11 @@ public class HibernateUtils {
         
         conf.addAnnotatedClass(Category.class);
         conf.addAnnotatedClass(Product.class);
+        conf.addAnnotatedClass(OrderDetail.class);
+        conf.addAnnotatedClass(SaleOrder.class);
+        conf.addAnnotatedClass(Tag.class);
+        conf.addAnnotatedClass(User.class);
+        conf.addAnnotatedClass(ProdTag.class);
         
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(conf.getProperties()).build();
