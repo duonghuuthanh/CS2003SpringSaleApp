@@ -43,11 +43,13 @@
                     <td>${p.name}</td>
                     <td>${p.price} VNĐ</td>
                     <td>
-                        <a href="#" class="btn btn-info">Cập nhật</a>
-                        <button class="btn btn-danger">Xóa</button>
+                        <c:url value="/products/${p.id}" var="api" />
+                        <a href="${api}" class="btn btn-info">Cập nhật</a>
+                        <button class="btn btn-danger" onclick="deleteProduct('${api}')">Xóa</button>
                     </td>
                 </tr>
             </c:forEach>
         </tbody>
     </table>
 </section>
+<script src="<c:url value="/js/main.js" />"></script>
